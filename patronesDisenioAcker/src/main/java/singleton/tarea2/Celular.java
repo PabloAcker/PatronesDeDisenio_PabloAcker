@@ -122,15 +122,15 @@ public class Celular {
 
     public void showInfo() {
         System.out.print("\n ----------------  \n");
-        System.out.println("Modelo celular: "+getModelo());
-        System.out.println("Tamaño celular: "+getTamano());
-        System.out.println("CPU " + getCpu());
-        System.out.println("Versión de Android " + getVersionAndroid());
-        System.out.println("Cámara " + getCamara());
-        System.out.println("Bluetooth "+getBluetooth());
-        System.out.println("Cantidad de Memoria Externas "+ getCantidadMemoriaExterna());
-        System.out.println("Tiempo de vida de bateria "+ getTiempoUsoBateria());
-        System.out.println("Accesorios "+ getAccesorios());
+        System.out.println("Modelo celular: "+this.getModelo());
+        System.out.println("Tamaño celular: "+this.getTamano());
+        System.out.println("CPU " + this.getCpu());
+        System.out.println("Versión de Android " + this.getVersionAndroid());
+        System.out.println("Cámara " + this.getCamara());
+        System.out.println("Bluetooth "+this.getBluetooth());
+        System.out.println("Cantidad de Memoria Externas "+ this.getCantidadMemoriaExterna());
+        System.out.println("Tiempo de vida de bateria "+ this.getTiempoUsoBateria());
+        System.out.println("Accesorios "+ this.getAccesorios());
         getSim().showInfo();
     }
 }
