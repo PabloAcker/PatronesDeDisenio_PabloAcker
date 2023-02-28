@@ -3,7 +3,7 @@ package parcial1.interpreter.b;
 public class Client {
     public static void main(String[] args) {
 
-        String msg = "10 / 2 + 5 + 5 + 5";
+        String msg = "10 / 2 + 5 + 5 + 6";
 
         Interpreter parser = new Interpreter(msg);
 

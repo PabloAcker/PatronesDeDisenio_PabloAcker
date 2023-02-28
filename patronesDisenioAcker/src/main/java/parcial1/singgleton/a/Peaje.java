@@ -4,7 +4,7 @@ public class Peaje {
     private int monto;
     private static Peaje instance = null;
 
-    public Peaje() {
+    private Peaje() {
         monto = 0;
         System.out.println("El monto inicial es: " + monto);
     }

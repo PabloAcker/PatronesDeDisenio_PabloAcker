@@ -6,7 +6,7 @@ public class AlmacenTesis {
     private int registro;
     private static AlmacenTesis instance = null;
 
-    public AlmacenTesis() {
+    private AlmacenTesis() {
         registro = 0;
     }
     private synchronized static void multiThreadManage(){
