@@ -5,7 +5,7 @@ cuando un SM envia un mensaje envia a todos los que estan registrados
 esto quiere decir que se envia a QA / DEV / SM
 cuando un DEV envia un mensage envia a todos los DEV
 
--nota asegurarse que la persona que envia el mensage no reciba
+-nota asegurarse que la cliente que envia el mensage no reciba
 su propio mensaje
 
 - se debe utilizar Map
