@@ -19,7 +19,7 @@ public class Dev implements IHandler{
             System.out.println("Se le resolvio el problema al cliente con los datos: ");
             cliente.showInfoCLiente();
         } else {
-            System.out.println("El Developer no pudo arreglar el problema "+titulo+", con la severidad: "+severidad+" y con la descripcion: "+descripcion+". Se lo pasa a revision al siguiente nivel superior...");
+            System.out.println("El Developer no pudo arreglar el problema "+titulo+", con la severidad: "+severidad+" y con la descripcion: "+descripcion+". Este problema no pudo ser solucionado :c");
             next.reporteProblema(cliente, titulo, severidad, descripcion);
         }
     }
