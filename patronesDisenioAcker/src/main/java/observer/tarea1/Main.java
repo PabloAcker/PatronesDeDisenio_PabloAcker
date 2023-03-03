@@ -1,5 +1,5 @@
 package observer.tarea1;
-
+import java.util.List;
 public class Main {
     public static void main(String[] args) {
 
@@ -11,17 +11,13 @@ public class Main {
         Cliente cliente2 = new Cliente("Maria", "64914697");
         Cliente cliente3 = new Cliente("Eynar", "64191242");
 
-        companiaTelf.asociamiento(cliente1,"premios");
-        companiaTelf.asociamiento(cliente1,"promociones");
+        companiaTelf.asociamiento(cliente1,List.of("premios","promociones"));
 
-        companiaTelf.asociamiento(cliente2,"noticias");
+        companiaTelf.asociamiento(cliente2,List.of("noticias"));
 
-        companiaTelf.asociamiento(cliente3,"precios de llamadas");
-        companiaTelf.asociamiento(cliente3,"promociones");
-        companiaTelf.asociamiento(cliente3,"premios");
-        companiaTelf.asociamiento(cliente3,"noticias");
+        companiaTelf.asociamiento(cliente3,List.of("precios de llamadas", "promociones", "premios" , "noticias"));
 
-        companiaTelf.setPropaganda(new Propaganda("324FAK23", "premios"));
+        //companiaTelf.setPropaganda(new Propaganda("324FAK23", "premios"));
         companiaTelf.setPropaganda(new Propaganda("6491219FKSGA", "noticias"));
     }
 }

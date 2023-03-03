@@ -1,9 +1,10 @@
 package observer.tarea1;
-
+import java.util.ArrayList;
+import java.util.List;
 public class Cliente implements ICliente{
     private String nombre;
     private String ci;
-    private String categoria;
+    private List<String> categoria;
 
     public Cliente(String nombre, String ci) {
         this.nombre = nombre;
@@ -31,19 +32,19 @@ public class Cliente implements ICliente{
         System.out.println("Iniciando espacio publicitario>>>>>>");
         System.out.println("Para el cliente con el nombre: "+getNombre());
         System.out.println("Con CI: "+getCi());
-        System.out.println("se muestra la categoria a su eleccion: "+getCategoriaPropaganda());
+        System.out.println("se muestra la/s categoria/s a su eleccion: "+getCategoriaPropaganda());
         System.out.println(message);
         propaganda.showInfoPropaganda();
         System.out.println("=======================================");
     }
 
     @Override
-    public void setCategoriaPropaganda(String categoria) {
+    public void setCategoriaPropaganda(List<String> categoria) {
         this.categoria=categoria;
     }
 
     @Override
-    public String getCategoriaPropaganda() {
+    public List<String> getCategoriaPropaganda() {
         return categoria;
     }
 }

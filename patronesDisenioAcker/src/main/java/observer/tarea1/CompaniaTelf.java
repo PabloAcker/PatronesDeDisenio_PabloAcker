@@ -33,7 +33,7 @@ public class CompaniaTelf implements ICompaniaTelf{
     }
 
     @Override
-    public void asociamiento(ICliente cliente, String categoria) {
+    public void asociamiento(ICliente cliente, List<String> categoria) {
         cliente.setCategoriaPropaganda(categoria);
         clientList.add(cliente);
     }
@@ -46,7 +46,7 @@ public class CompaniaTelf implements ICompaniaTelf{
     @Override
     public void notificacion(Propaganda propaganda) {
         for (ICliente cliente:clientList) {
-            if (propaganda.getCategoria().equals(cliente.getCategoriaPropaganda()))
+            if (cliente.getCategoriaPropaganda().contains(propaganda.getCategoria()))
                 cliente.subirNotificacion("Le llegó una notificacion de su compañía telefónica hablando sobre bla bla bla....: \n",propaganda);
         }
     }
