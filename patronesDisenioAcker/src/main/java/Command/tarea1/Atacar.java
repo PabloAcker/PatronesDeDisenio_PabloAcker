@@ -1,7 +1,5 @@
 package Command.tarea1;
 
-import ChainOfResponsability.tarea1.IHandler;
-
 public class Atacar implements ICommand {
     private Personaje personaje;
 
