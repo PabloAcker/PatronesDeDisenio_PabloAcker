@@ -4,25 +4,35 @@ import java.util.List;
 
 public class Laboratorio extends ContenedorCompus{
     private List<ContenedorCompus> contenedortList = new ArrayList<>();
-    int precioTotal = 0;
 
-    public Laboratorio(int precio){
-        super(precio);
+    public Laboratorio(String tipo){
+        super(tipo);
     }
     @Override
-    public void showInfo() {
-        for(ContenedorCompus contenedor : contenedortList){
-            contenedor.showInfo();
-            precioTotal = precioTotal+contenedor.getPrecio();
-        }
-        System.out.println("Precio total: " + precioTotal + " $");
+    public String showInfo() {
+        return getTipo() +" tiene un precio total de >>> \n" + " Precio: " + getPrecio() + "\n";
     }
+
+    @Override
+    public void calcularPrecio() {
+        for(ContenedorCompus contenedorCompus : contenedortList) {
+            contenedorCompus.calcularPrecio();
+            this.setPrecio(this.getPrecio() + contenedorCompus.getPrecio());
+        }
+        Singleton.getInstance().add(this.showInfo());
+        if(isUltimo()) {
+            Singleton.getInstance().showInfo();
+            Singleton.getInstance().setPrecioGlobal(Singleton.getInstance().getPrecioGlobal() + this.getPrecio());
+        }
+    }
+
     @Override
     public void add(ContenedorCompus contenedorCompus) {
         contenedortList.add(contenedorCompus);
     }
     @Override
     public void remove(ContenedorCompus contenedorCompus) {
-        contenedortList.remove(contenedorCompus);
+        contenedorCompus.remove(contenedorCompus);
     }
+
 }

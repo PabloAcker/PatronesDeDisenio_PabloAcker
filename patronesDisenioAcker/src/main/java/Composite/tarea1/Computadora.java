@@ -1,22 +1,25 @@
 package Composite.tarea1;
 
 public class Computadora extends ContenedorCompus{
-    public Computadora(int precio){
-        super(precio);
-    }
 
+    public Computadora(String tipo) {
+        super(tipo);
+        setPrecio(100);
+    }
     @Override
-    public void showInfo() {
-        System.out.println("precio: " + getPrecio());
+    public String showInfo() {
+        return "\t" + getTipo()+" tiene un precio total de >>>\n" + "\t Precio: " + getPrecio() + "\n";
+    }
+    @Override
+    public void calcularPrecio() {
+        Singleton.getInstance().add(this.showInfo());
     }
 
     @Override
     public void add(ContenedorCompus contenedorCompus) {
-        //TODO
     }
 
     @Override
     public void remove(ContenedorCompus contenedorCompus) {
-        //TODO
     }
 }

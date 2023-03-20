@@ -2,21 +2,29 @@ package Composite.tarea1;
 
 public class Main {
     public static void main(String[] args) {
-        Computadora computadora1 = new Computadora(100);
-        Computadora computadora2 = new Computadora(100);
-        Computadora computadora3 = new Computadora(100);
+        Computadora compu1 = new Computadora("Computadora");
+        Computadora compu2 = new Computadora("Computadora");
+        Computadora compu3 = new Computadora("Computadora");
 
-        Laboratorio laboratorio1 = new Laboratorio(0);
-        Laboratorio laboratorio2 = new Laboratorio(0);
 
-        laboratorio1.add(computadora1);
-        laboratorio1.add(computadora2);
+        Laboratorio laboratorio1 = new Laboratorio("Laboratorio");
+        Laboratorio laboratorio2 = new Laboratorio("Laboratorio");
 
-        laboratorio2.add(computadora3);
+        laboratorio1.add(compu1);
+        laboratorio1.add(compu2);
 
-        Laboratorio contenedor = new Laboratorio(0);
-        contenedor.add(laboratorio1);
-        contenedor.add(laboratorio2);
-        contenedor.showInfo();
+        laboratorio2.add(compu3);
+
+        Laboratorio contenedor1 = new Laboratorio("Contenedor de Computadoras");
+
+        contenedor1.add(laboratorio1);
+        contenedor1.add(laboratorio2);
+
+        contenedor1.setUltimo(true);
+
+        contenedor1.calcularPrecio();
+        System.out.println("===========================================");
+        System.out.println("Precio total: " + Singleton.getInstance().getPrecioGlobal());
+
     }
 }
